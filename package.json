@@ -1,6 +1,6 @@
 {
-  "name": "typescript-node-base-with-eslint-prettier",
-  "version": "1.0.0",
+  "name": "oura-api-v2-client",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
