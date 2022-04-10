@@ -1,8 +1,8 @@
-export default class Response {
-  statusCode;
-  body;
+export default class Response<T> {
+  statusCode: number;
+  body: T;
 
-  constructor(statusCode, body) {
+  constructor(statusCode: number, body: T) {
     this.statusCode = statusCode;
     this.body = body;
   }

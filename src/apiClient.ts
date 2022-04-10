@@ -4,7 +4,7 @@ import Response from "./types/Response";
 export default class ApiClient {
   instance;
 
-  constructor(accessToken) {
+  constructor(accessToken: string) {
     if (!accessToken) {
       throw new Error("Required access token");
     }
@@ -17,7 +17,7 @@ export default class ApiClient {
     });
   }
 
-  async fetch(path, queryParameters) {
+  async fetch<T>(path: string, queryParameters?: string): Promise<Response<T>> {
     const url = !queryParameters ? path : path + queryParameters;
     const response = await this.instance.get(url);
     return new Response(response.status, response.data);

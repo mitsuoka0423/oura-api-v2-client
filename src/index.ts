@@ -2,16 +2,18 @@ import ApiClient from "./apiClient";
 import { PersonalInfo } from "./types/oura";
 
 export default class OuraApiV2Client {
-  api;
+  api: ApiClient;
 
-  constructor(accessToken) {
+  constructor(accessToken: string) {
     this.api = new ApiClient(accessToken);
   }
 
-  async personalInfo() {
+  async personalInfo(): Promise<PersonalInfo> {
     // TODO: build query string using startDate endDate
 
-    const response = await this.api.fetch("/v2/usercollection/personal_info");
+    const response = await this.api.fetch<PersonalInfo>(
+      "/v2/usercollection/personal_info"
+    );
 
     const age = response.body.age;
     const weight = response.body.weight;
