@@ -1,5 +1,6 @@
 {
   "name": "oura-api-v2-client",
+  "type": "module",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -44,5 +45,8 @@
     "*.{js,ts}": "eslint --cache --fix",
     "*.ts": "tsc --noEmit",
     "*.{js,ts,json}": "prettier --write"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
   }
 }
