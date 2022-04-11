@@ -1,3 +1,4 @@
+import DailyActivity from "./DailyActivity";
 import PersonalInfo from "./PersonalInfo";
 
-export { PersonalInfo };
+export { DailyActivity, PersonalInfo };

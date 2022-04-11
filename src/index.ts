@@ -1,11 +1,21 @@
 import ApiClient from "./apiClient";
-import { PersonalInfo } from "./types/oura";
+import { DailyActivity, PersonalInfo } from "./types/oura";
 
 export default class OuraApiV2Client {
   api: ApiClient;
 
   constructor(accessToken: string) {
     this.api = new ApiClient(accessToken);
+  }
+
+  async dailyActivity(): Promise<DailyActivity> {
+    // TODO: build query string using startDate endDate
+
+    const response = await this.api.fetch<DailyActivity>(
+      "/v2/usercollection/daily_activity"
+    );
+
+    return new DailyActivity(response.body);
   }
 
   async personalInfo(): Promise<PersonalInfo> {
