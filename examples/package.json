@@ -1,6 +1,5 @@
 {
   "name": "examples",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "getDailyActivity.js",
@@ -11,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "oura-api-v2-client": "^0.1.0"
+    "oura-api-v2-client": "^0.1.2"
   }
 }

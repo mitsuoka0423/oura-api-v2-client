@@ -1,7 +1,7 @@
-import OuraApiV2Client from "oura-api-v2-client";
+const OuraApiV2Client = require("oura-api-v2-client").default;
+const ouraApiV2Client = new OuraApiV2Client(process.env.ACCESS_TOKEN);
 
 const main = async () => {
-  const ouraApiV2Client = new OuraApiV2Client(process.env.ACCESS_TOKEN);
   const dailyActivity = await ouraApiV2Client.dailyActivity();
   console.log(dailyActivity);
 };
