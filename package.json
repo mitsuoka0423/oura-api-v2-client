@@ -1,6 +1,6 @@
 {
   "name": "oura-api-v2-client",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "api client for Oura API V2",
   "main": "dist/cjs/index.js",
   "exports": {
@@ -27,6 +27,14 @@
   },
   "keywords": ["oura", "oura ring", "oura api", "oura api v2"],
   "author": "Takahiro MITSUOKA",
+  "bugs": {
+    "url" : "https://github.com/mitsuoka0423/oura-api-v2-client/issues",
+    "email" : "mono0423@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mitsuoka0423/oura-api-v2-client"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^12.12.54",
