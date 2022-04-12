@@ -2,7 +2,7 @@
   "name": "oura-api-v2-client",
   "type": "module",
   "version": "0.1.0",
-  "description": "",
+  "description": "api client for Oura API V2",
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node src/index.ts",
@@ -18,9 +18,9 @@
     "lint": "npm-run-all eslint check-types",
     "lint:fix": "npm-run-all eslint:fix check-types format"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["oura", "oura ring", "oura api", "oura api v2"],
+  "author": "Takahiro MITSUOKA",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^12.12.54",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
