@@ -1,16 +1,16 @@
 # oura-api-v2-client
 
-# Install
+## Install
 
 ```bash
 npm i oura-api-v2-client
 ```
 
-# Get Token
+## Get Token
 
 https://cloud.ouraring.com/personal-access-tokens
 
-# Examples
+## Examples
 
 ```js
 import OuraApiV2Client from "oura-api-v2-client";
