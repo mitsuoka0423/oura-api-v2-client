@@ -15,7 +15,8 @@
     "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint src/**/*.ts --fix",
     "lint": "npm-run-all eslint check-types",
-    "lint:fix": "npm-run-all eslint:fix check-types format"
+    "lint:fix": "npm-run-all eslint:fix check-types format",
+    "prepublish": "$(npm bin)/tsc"
   },
   "keywords": ["oura", "oura ring", "oura api", "oura api v2"],
   "author": "Takahiro MITSUOKA",
