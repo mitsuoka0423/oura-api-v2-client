@@ -1,5 +1,6 @@
 import ApiClient from "./apiClient";
 import { DailyActivity, PersonalInfo } from "./types/oura";
+import { Sleep_V1 } from "./types/oura/v1";
 
 export default class OuraApiV2Client {
   api: ApiClient;
@@ -32,5 +33,14 @@ export default class OuraApiV2Client {
     const email = response.body.email;
 
     return new PersonalInfo(age, weight, height, biological_sex, email);
+  }
+
+  /**
+   * @deprecated
+   * @see https://cloud.ouraring.com/docs/
+   */
+  async sleep_v1(): Promise<Sleep_V1> {
+    const response = await this.api.fetch<Sleep_V1[]>("/v1/sleep");
+    return new Sleep_V1(response.body);
   }
 }
