@@ -1,5 +1,7 @@
 # oura-api-v2-client
 
+ŌURA API V2 client
+
 ## Install
 
 ```bash
