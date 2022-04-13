@@ -1,5 +1,5 @@
 import ApiClient from "./apiClient";
-import { DailyActivity, PersonalInfo } from "./types/oura";
+import { DailyActivity, PersonalInfo, HeartRate } from "./types/oura";
 import { Sleep_V1 } from "./types/oura/v1";
 
 export default class OuraApiV2Client {
@@ -17,6 +17,15 @@ export default class OuraApiV2Client {
     );
 
     return new DailyActivity(response.body);
+  }
+
+  async heartRate(): Promise<HeartRate> {
+    // TODO: build query string using startDate endDate
+
+    const response = await this.api.fetch<HeartRate>(
+      "/v2/usercollection/heartrate"
+    );
+    return new HeartRate(response.body);
   }
 
   async personalInfo(): Promise<PersonalInfo> {
