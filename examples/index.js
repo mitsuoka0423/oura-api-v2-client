@@ -8,6 +8,9 @@ const main = async () => {
   const personalInfo = await ouraApiV2Client.personalInfo();
   console.log(personalInfo);
 
+  const heartRate = await ouraApiV2Client.heartRate();
+  console.log(heartRate);
+
   const sleep = await ouraApiV2Client.sleep_v1();
   console.log(sleep);
 };
