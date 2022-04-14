@@ -11,6 +11,9 @@ const main = async () => {
   const heartRate = await ouraApiV2Client.heartRate();
   console.log(heartRate);
 
+  const sessions = await ouraApiV2Client.sessions();
+  console.log(sessions);
+
   const sleep = await ouraApiV2Client.sleep_v1();
   console.log(sleep);
 };
