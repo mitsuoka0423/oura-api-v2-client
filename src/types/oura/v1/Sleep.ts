@@ -1,7 +1,7 @@
 export default class Sleep_V1 {
   sleep: SleepData[];
 
-  constructor(input) {
+  constructor(input: Sleep_V1) {
     this.sleep = input.sleep.map((data) => new SleepData(data));
   }
 }
@@ -40,7 +40,7 @@ class SleepData {
   hr_5min: number[];
   rmssd_5min: number[];
 
-  constructor(input) {
+  constructor(input: SleepData) {
     this.summary_date = input.summary_date;
     this.period_id = input.period_id;
     this.is_longest = input.is_longest;

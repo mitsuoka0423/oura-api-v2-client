@@ -1,11 +1,17 @@
 export default class PersonalInfo {
-  age;
-  weight;
-  height;
-  biological_sex;
-  email;
+  age: number | null;
+  weight: number | null;
+  height: number | null;
+  biological_sex: string | null;
+  email: string | null;
 
-  constructor(age, weight, height, biological_sex, email) {
+  constructor(
+    age: number | null,
+    weight: number | null,
+    height: number | null,
+    biological_sex: string | null,
+    email: string | null
+  ) {
     this.age = age;
     this.weight = weight;
     this.height = height;

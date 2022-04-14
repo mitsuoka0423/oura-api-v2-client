@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import Response from "./types/Response";
 
 export default class ApiClient {
-  instance;
+  instance: AxiosInstance;
 
   constructor(accessToken: string) {
     if (!accessToken) {

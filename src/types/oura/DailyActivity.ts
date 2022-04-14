@@ -2,7 +2,7 @@ export default class DailyActivity {
   data: Array<DailyActivityData>;
   next_token?: string;
 
-  constructor(input) {
+  constructor(input: DailyActivity) {
     this.data = input.data as Array<DailyActivityData>;
     this.next_token = input.next_token;
   }

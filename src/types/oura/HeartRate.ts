@@ -2,7 +2,7 @@ export default class HeartRate {
   data: HeartRateData[];
   next_token: string;
 
-  constructor(input) {
+  constructor(input: HeartRate) {
     this.data = input.data as Array<HeartRateData>;
     this.next_token = input.next_token;
   }

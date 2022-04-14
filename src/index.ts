@@ -58,7 +58,7 @@ export default class OuraApiV2Client {
    * @see https://cloud.ouraring.com/docs/
    */
   async sleep_v1(): Promise<Sleep_V1> {
-    const response = await this.api.fetch<Sleep_V1[]>("/v1/sleep");
+    const response = await this.api.fetch<Sleep_V1>("/v1/sleep");
     return new Sleep_V1(response.body);
   }
 }

@@ -2,7 +2,7 @@ export default class Sessions {
   data: SessionData[];
   next_token: string;
 
-  constructor(input) {
+  constructor(input: Sessions) {
     this.data = input.data as SessionData[];
     this.next_token = input.next_token;
   }
