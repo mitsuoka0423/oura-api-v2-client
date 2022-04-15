@@ -4,6 +4,7 @@ import {
   PersonalInfoResponse,
   HeartRateResponse,
   SessionsResponse,
+  TagsResponse,
 } from "./types/oura/response";
 import { SleepResponse_V1 } from "./types/oura/response/v1";
 
@@ -48,6 +49,16 @@ export default class OuraApiV2Client {
 
     const response = await this.api.fetch<PersonalInfoResponse>(
       "/v2/usercollection/personal_info"
+    );
+
+    return response.body;
+  }
+
+  async tags(): Promise<TagsResponse> {
+    // TODO: build query string using startDate endDate
+
+    const response = await this.api.fetch<TagsResponse>(
+      "/v2/usercollection/tag"
     );
 
     return response.body;
