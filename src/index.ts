@@ -21,7 +21,7 @@ export default class OuraApiV2Client {
       "/v2/usercollection/daily_activity"
     );
 
-    return response.body as DailyActivityResponse;
+    return response.body;
   }
 
   async heartRate(): Promise<HeartRateResponse> {
@@ -31,7 +31,7 @@ export default class OuraApiV2Client {
       "/v2/usercollection/heartrate"
     );
 
-    return response.body as HeartRateResponse;
+    return response.body;
   }
 
   async sessions(): Promise<SessionsResponse> {
@@ -40,7 +40,7 @@ export default class OuraApiV2Client {
     const response = await this.api.fetch<SessionsResponse>(
       "/v2/usercollection/session"
     );
-    return response.body as SessionsResponse;
+    return response.body;
   }
 
   async personalInfo(): Promise<PersonalInfoResponse> {
@@ -50,7 +50,7 @@ export default class OuraApiV2Client {
       "/v2/usercollection/personal_info"
     );
 
-    return response.body as PersonalInfoResponse;
+    return response.body;
   }
 
   /**
@@ -58,7 +58,10 @@ export default class OuraApiV2Client {
    * @see https://cloud.ouraring.com/docs/
    */
   async sleep_v1(): Promise<SleepResponse_V1> {
+    // TODO: build query string using startDate endDate
+
     const response = await this.api.fetch<SleepResponse_V1>("/v1/sleep");
-    return response.body as SleepResponse_V1;
+
+    return response.body;
   }
 }
