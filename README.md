@@ -15,7 +15,7 @@ https://cloud.ouraring.com/personal-access-tokens
 ## Examples
 
 ```js
-const OuraApiV2Client = require('oura-api-v2-client').default;
+const OuraApiV2Client = require('oura-api-v2-client');
 const ouraApiV2Client = new OuraApiV2Client('ACCESS_TOKEN');
 
 const main = async () => {
