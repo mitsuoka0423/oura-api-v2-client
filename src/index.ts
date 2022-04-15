@@ -1,11 +1,11 @@
 import ApiClient from "./apiClient";
 import {
-  DailyActivity,
-  PersonalInfo,
-  HeartRate,
-  Sessions,
+  DailyActivityResponse,
+  PersonalInfoResponse,
+  HeartRateResponse,
+  SessionsResponse,
 } from "./types/oura/response";
-import { Sleep_V1 } from "./types/oura/response/v1";
+import { SleepResponse_V1 } from "./types/oura/response/v1";
 
 export default class OuraApiV2Client {
   api: ApiClient;
@@ -14,56 +14,51 @@ export default class OuraApiV2Client {
     this.api = new ApiClient(accessToken);
   }
 
-  async dailyActivity(): Promise<DailyActivity> {
+  async dailyActivity(): Promise<DailyActivityResponse> {
     // TODO: build query string using startDate endDate
 
-    const response = await this.api.fetch<DailyActivity>(
+    const response = await this.api.fetch<DailyActivityResponse>(
       "/v2/usercollection/daily_activity"
     );
 
-    return new DailyActivity(response.body);
+    return response.body as DailyActivityResponse;
   }
 
-  async heartRate(): Promise<HeartRate> {
+  async heartRate(): Promise<HeartRateResponse> {
     // TODO: build query string using startDate endDate
 
-    const response = await this.api.fetch<HeartRate>(
+    const response = await this.api.fetch<HeartRateResponse>(
       "/v2/usercollection/heartrate"
     );
-    return new HeartRate(response.body);
+
+    return response.body as HeartRateResponse;
   }
 
-  async sessions(): Promise<Sessions> {
+  async sessions(): Promise<SessionsResponse> {
     // TODO: build query string using startDate endDate
 
-    const response = await this.api.fetch<Sessions>(
+    const response = await this.api.fetch<SessionsResponse>(
       "/v2/usercollection/session"
     );
-    return new Sessions(response.body);
+    return response.body as SessionsResponse;
   }
 
-  async personalInfo(): Promise<PersonalInfo> {
+  async personalInfo(): Promise<PersonalInfoResponse> {
     // TODO: build query string using startDate endDate
 
-    const response = await this.api.fetch<PersonalInfo>(
+    const response = await this.api.fetch<PersonalInfoResponse>(
       "/v2/usercollection/personal_info"
     );
 
-    const age = response.body.age;
-    const weight = response.body.weight;
-    const height = response.body.height;
-    const biological_sex = response.body.biological_sex;
-    const email = response.body.email;
-
-    return new PersonalInfo(age, weight, height, biological_sex, email);
+    return response.body as PersonalInfoResponse;
   }
 
   /**
    * @deprecated
    * @see https://cloud.ouraring.com/docs/
    */
-  async sleep_v1(): Promise<Sleep_V1> {
-    const response = await this.api.fetch<Sleep_V1>("/v1/sleep");
-    return new Sleep_V1(response.body);
+  async sleep_v1(): Promise<SleepResponse_V1> {
+    const response = await this.api.fetch<SleepResponse_V1>("/v1/sleep");
+    return response.body as SleepResponse_V1;
   }
 }

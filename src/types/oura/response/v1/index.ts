@@ -1,3 +1,3 @@
-import Sleep_V1 from "./Sleep";
+import { SleepResponse_V1 } from "./SleepResponse";
 
-export { Sleep_V1 };
+export { SleepResponse_V1 };

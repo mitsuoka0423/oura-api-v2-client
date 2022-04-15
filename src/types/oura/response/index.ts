@@ -1,6 +1,11 @@
-import DailyActivity from "./DailyActivity";
-import PersonalInfo from "./PersonalInfo";
-import HeartRate from "./HeartRate";
-import Sessions from "./Sessions";
+import { DailyActivityResponse } from "./DailyActivityResponse";
+import { PersonalInfoResponse } from "./PersonalInfoResponse";
+import { HeartRateResponse } from "./HeartRateResponse";
+import { SessionsResponse } from "./SessionsResponse";
 
-export { DailyActivity, PersonalInfo, HeartRate, Sessions };
+export {
+  DailyActivityResponse,
+  PersonalInfoResponse,
+  HeartRateResponse,
+  SessionsResponse,
+};
