@@ -14,6 +14,9 @@ const main = async () => {
   const sessions = await ouraApiV2Client.sessions();
   console.log(sessions);
 
+  const tags = await ouraApiV2Client.tags();
+  console.log(tags);
+
   const sleep = await ouraApiV2Client.sleep_v1();
   console.log(sleep);
 };
