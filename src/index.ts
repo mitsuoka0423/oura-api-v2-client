@@ -1,6 +1,11 @@
 import ApiClient from "./apiClient";
-import { DailyActivity, PersonalInfo, HeartRate, Sessions } from "./types/oura";
-import { Sleep_V1 } from "./types/oura/v1";
+import {
+  DailyActivity,
+  PersonalInfo,
+  HeartRate,
+  Sessions,
+} from "./types/oura/response";
+import { Sleep_V1 } from "./types/oura/response/v1";
 
 export default class OuraApiV2Client {
   api: ApiClient;
