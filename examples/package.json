@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "oura-api-v2-client": "^0.1.9"
+    "oura-api-v2-client": "^0.2.1"
   }
 }

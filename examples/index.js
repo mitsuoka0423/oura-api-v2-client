@@ -1,4 +1,4 @@
-const OuraApiV2Client = require("oura-api-v2-client").default;
+const OuraApiV2Client = require("oura-api-v2-client");
 const ouraApiV2Client = new OuraApiV2Client(process.env.ACCESS_TOKEN);
 
 const main = async () => {
