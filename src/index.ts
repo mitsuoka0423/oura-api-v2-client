@@ -7,7 +7,10 @@ import {
   TagsResponse,
   WorkoutsResponse,
 } from "./types/oura/response";
-import { SleepResponse_V1 } from "./types/oura/response/v1";
+import {
+  SleepResponse_V1,
+  ReadinessResponse_V1,
+} from "./types/oura/response/v1";
 
 export default class OuraApiV2Client {
   api: ApiClient;
@@ -83,6 +86,20 @@ export default class OuraApiV2Client {
     // TODO: build query string using startDate endDate
 
     const response = await this.api.fetch<SleepResponse_V1>("/v1/sleep");
+
+    return response.body;
+  }
+
+  /**
+   * @deprecated
+   * @see https://cloud.ouraring.com/docs/
+   */
+  async readiness_v1(): Promise<ReadinessResponse_V1> {
+    // TODO: build query string using startDate endDate
+
+    const response = await this.api.fetch<ReadinessResponse_V1>(
+      "/v1/readiness"
+    );
 
     return response.body;
   }
