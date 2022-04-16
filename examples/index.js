@@ -17,8 +17,14 @@ const main = async () => {
   const tags = await ouraApiV2Client.tags();
   console.log(tags);
 
+  const workouts = await ouraApiV2Client.workouts();
+  console.log(workouts);
+
   const sleep = await ouraApiV2Client.sleep_v1();
   console.log(sleep);
+
+  const readiness = await ouraApiV2Client.readiness_v1();
+  console.log(readiness);
 };
 
 main();

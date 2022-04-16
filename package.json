@@ -1,6 +1,6 @@
 {
   "name": "oura-api-v2-client",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "API client for Oura API V2",
   "main": "dist/cjs/index.js",
   "exports": {
