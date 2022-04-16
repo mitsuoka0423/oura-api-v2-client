@@ -5,6 +5,7 @@ import {
   HeartRateResponse,
   SessionsResponse,
   TagsResponse,
+  WorkoutsResponse,
 } from "./types/oura/response";
 import { SleepResponse_V1 } from "./types/oura/response/v1";
 
@@ -59,6 +60,16 @@ export default class OuraApiV2Client {
 
     const response = await this.api.fetch<TagsResponse>(
       "/v2/usercollection/tag"
+    );
+
+    return response.body;
+  }
+
+  async workouts(): Promise<WorkoutsResponse> {
+    // TODO: build query string using startDate endDate
+
+    const response = await this.api.fetch<WorkoutsResponse>(
+      "/v2/usercollection/workout"
     );
 
     return response.body;
