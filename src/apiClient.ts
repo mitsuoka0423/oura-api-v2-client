@@ -1,7 +1,8 @@
+import { ApiClientInterface } from "./index";
 import axios, { AxiosInstance } from "axios";
 import Response from "./types/Response";
 
-export default class ApiClient {
+export default class ApiClient implements ApiClientInterface {
   instance: AxiosInstance;
 
   constructor(accessToken: string) {
@@ -18,7 +19,7 @@ export default class ApiClient {
   }
 
   async fetch<T>(path: string, queryParameters?: string): Promise<Response<T>> {
-    const url = !queryParameters ? path : path + queryParameters;
+    const url = !queryParameters ? path : path + `?${queryParameters}`;
     const response = await this.instance.get(url);
     return new Response(response.status, response.data);
   }
