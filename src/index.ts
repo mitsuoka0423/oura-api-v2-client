@@ -3,10 +3,10 @@ import {
   DailyActivityResponse,
   PersonalInfoResponse,
   HeartRateResponse,
-  SessionsResponse,
-  TagsResponse,
-  WorkoutsResponse,
-} from "./types/oura/response";
+  SessionResponse,
+  TagResponse,
+  WorkoutResponse,
+} from "../domains";
 import {
   SleepResponse_V1,
   ReadinessResponse_V1,
@@ -85,7 +85,7 @@ export default class OuraApiV2Client {
     return response.body;
   }
 
-  async sessions(props?: RequestProps): Promise<SessionsResponse> {
+  async sessions(props?: RequestProps): Promise<SessionResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
       parameters.set("start_date", props.startDate);
@@ -97,7 +97,7 @@ export default class OuraApiV2Client {
       parameters.set("next_token", props.nextToken);
     }
 
-    const response = await this.api.fetch<SessionsResponse>(
+    const response = await this.api.fetch<SessionResponse>(
       "/v2/usercollection/session",
       parameters.toString()
     );
@@ -105,7 +105,7 @@ export default class OuraApiV2Client {
     return response.body;
   }
 
-  async tags(props?: RequestProps): Promise<TagsResponse> {
+  async tags(props?: RequestProps): Promise<TagResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
       parameters.set("start_date", props.startDate);
@@ -117,7 +117,7 @@ export default class OuraApiV2Client {
       parameters.set("next_token", props.nextToken);
     }
 
-    const response = await this.api.fetch<TagsResponse>(
+    const response = await this.api.fetch<TagResponse>(
       "/v2/usercollection/tag",
       parameters.toString()
     );
@@ -125,7 +125,7 @@ export default class OuraApiV2Client {
     return response.body;
   }
 
-  async workouts(props?: RequestProps): Promise<WorkoutsResponse> {
+  async workouts(props?: RequestProps): Promise<WorkoutResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
       parameters.set("start_date", props.startDate);
@@ -137,7 +137,7 @@ export default class OuraApiV2Client {
       parameters.set("next_token", props.nextToken);
     }
 
-    const response = await this.api.fetch<WorkoutsResponse>(
+    const response = await this.api.fetch<WorkoutResponse>(
       "/v2/usercollection/workout",
       parameters.toString()
     );
