@@ -24,11 +24,16 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "keywords": ["oura", "oura ring", "oura api", "oura api v2"],
+  "keywords": [
+    "oura",
+    "oura ring",
+    "oura api",
+    "oura api v2"
+  ],
   "author": "Takahiro MITSUOKA",
   "bugs": {
-    "url" : "https://github.com/mitsuoka0423/oura-api-v2-client/issues",
-    "email" : "mono0423@gmail.com"
+    "url": "https://github.com/mitsuoka0423/oura-api-v2-client/issues",
+    "email": "mono0423@gmail.com"
   },
   "repository": {
     "type": "git",
@@ -60,10 +65,13 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.0.0",
+    "@size-limit/webpack": "^8.0.0",
+    "@size-limit/webpack-why": "^8.0.0",
     "husky": "^8.0.1",
     "size-limit": "^8.0.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "url": "^0.11.0"
   }
 }
