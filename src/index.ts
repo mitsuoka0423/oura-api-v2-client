@@ -1,4 +1,4 @@
-import ApiClient from "./apiClient";
+import ApiClient from './apiClient';
 import {
   DailyActivityResponse,
   PersonalInfoResponse,
@@ -6,13 +6,13 @@ import {
   SessionResponse,
   TagResponse,
   WorkoutResponse,
-} from "../domains";
+} from '../domains';
 import {
   SleepResponse_V1,
   ReadinessResponse_V1,
-} from "./types/oura/response/v1";
-import { URLSearchParams } from "url";
-import Response from "./types/Response";
+} from './types/oura/response/v1';
+import { URLSearchParams } from 'url';
+import Response from './types/Response';
 
 type RequestProps = {
   startDate?: string;
@@ -40,17 +40,17 @@ export default class OuraApiV2Client {
   async dailyActivity(props?: RequestProps): Promise<DailyActivityResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
-      parameters.set("start_date", props.startDate);
+      parameters.set('start_date', props.startDate);
     }
     if (props?.endDate) {
-      parameters.set("end_date", props.endDate);
+      parameters.set('end_date', props.endDate);
     }
     if (props?.nextToken) {
-      parameters.set("next_token", props.nextToken);
+      parameters.set('next_token', props.nextToken);
     }
 
     const response = await this.api.fetch<DailyActivityResponse>(
-      "/v2/usercollection/daily_activity",
+      '/v2/usercollection/daily_activity',
       parameters.toString()
     );
 
@@ -59,7 +59,7 @@ export default class OuraApiV2Client {
 
   async personalInfo(): Promise<PersonalInfoResponse> {
     const response = await this.api.fetch<PersonalInfoResponse>(
-      "/v2/usercollection/personal_info"
+      '/v2/usercollection/personal_info'
     );
 
     return response.body;
@@ -68,17 +68,17 @@ export default class OuraApiV2Client {
   async heartRate(props?: HeartRateRequestProps): Promise<HeartRateResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate_timestamp) {
-      parameters.set("start_date", props.startDate_timestamp);
+      parameters.set('start_date', props.startDate_timestamp);
     }
     if (props?.endDate_timestamp) {
-      parameters.set("end_date", props.endDate_timestamp);
+      parameters.set('end_date', props.endDate_timestamp);
     }
     if (props?.nextToken) {
-      parameters.set("next_token", props.nextToken);
+      parameters.set('next_token', props.nextToken);
     }
 
     const response = await this.api.fetch<HeartRateResponse>(
-      "/v2/usercollection/heartrate",
+      '/v2/usercollection/heartrate',
       parameters.toString()
     );
 
@@ -88,17 +88,17 @@ export default class OuraApiV2Client {
   async sessions(props?: RequestProps): Promise<SessionResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
-      parameters.set("start_date", props.startDate);
+      parameters.set('start_date', props.startDate);
     }
     if (props?.endDate) {
-      parameters.set("end_date", props.endDate);
+      parameters.set('end_date', props.endDate);
     }
     if (props?.nextToken) {
-      parameters.set("next_token", props.nextToken);
+      parameters.set('next_token', props.nextToken);
     }
 
     const response = await this.api.fetch<SessionResponse>(
-      "/v2/usercollection/session",
+      '/v2/usercollection/session',
       parameters.toString()
     );
 
@@ -108,17 +108,17 @@ export default class OuraApiV2Client {
   async tags(props?: RequestProps): Promise<TagResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
-      parameters.set("start_date", props.startDate);
+      parameters.set('start_date', props.startDate);
     }
     if (props?.endDate) {
-      parameters.set("end_date", props.endDate);
+      parameters.set('end_date', props.endDate);
     }
     if (props?.nextToken) {
-      parameters.set("next_token", props.nextToken);
+      parameters.set('next_token', props.nextToken);
     }
 
     const response = await this.api.fetch<TagResponse>(
-      "/v2/usercollection/tag",
+      '/v2/usercollection/tag',
       parameters.toString()
     );
 
@@ -128,17 +128,17 @@ export default class OuraApiV2Client {
   async workouts(props?: RequestProps): Promise<WorkoutResponse> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
-      parameters.set("start_date", props.startDate);
+      parameters.set('start_date', props.startDate);
     }
     if (props?.endDate) {
-      parameters.set("end_date", props.endDate);
+      parameters.set('end_date', props.endDate);
     }
     if (props?.nextToken) {
-      parameters.set("next_token", props.nextToken);
+      parameters.set('next_token', props.nextToken);
     }
 
     const response = await this.api.fetch<WorkoutResponse>(
-      "/v2/usercollection/workout",
+      '/v2/usercollection/workout',
       parameters.toString()
     );
 
@@ -152,14 +152,14 @@ export default class OuraApiV2Client {
   async sleep_v1(props?: RequestProps): Promise<SleepResponse_V1> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
-      parameters.set("start", props.startDate);
+      parameters.set('start', props.startDate);
     }
     if (props?.endDate) {
-      parameters.set("end", props.endDate);
+      parameters.set('end', props.endDate);
     }
 
     const response = await this.api.fetch<SleepResponse_V1>(
-      "/v1/sleep",
+      '/v1/sleep',
       parameters.toString()
     );
 
@@ -173,14 +173,14 @@ export default class OuraApiV2Client {
   async readiness_v1(props?: RequestProps): Promise<ReadinessResponse_V1> {
     const parameters = new URLSearchParams();
     if (props?.startDate) {
-      parameters.set("start", props.startDate);
+      parameters.set('start', props.startDate);
     }
     if (props?.endDate) {
-      parameters.set("end", props.endDate);
+      parameters.set('end', props.endDate);
     }
 
     const response = await this.api.fetch<ReadinessResponse_V1>(
-      "/v1/readiness",
+      '/v1/readiness',
       parameters.toString()
     );
 
